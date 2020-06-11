@@ -22,7 +22,7 @@ function StateCell({state, statistic}) {
   const ArrowUp = useMemo(() => <Icon.ArrowUp />, []);
 
   return (
-    <td>
+    <td className={classnames(`${statistic}`)}>
       <span className={classnames('delta', `is-${statistic}`)}>
         {state[`delta${statistic}`] > 0 && ArrowUp}
         {state[`delta${statistic}`] > 0 && state[`delta${statistic}`]}

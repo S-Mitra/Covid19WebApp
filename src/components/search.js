@@ -238,13 +238,14 @@ function Search({districtZones}) {
           onChange={(event) => {
             setSearchValue(event.target.value);
           }}
+          placeholder="Search..."
         />
+        <div className="search-button"></div>
         <span id="search-placeholder" className="search-placeholder"></span>
-
-        <div className={`search-button`}>
-          <Icon.Search />
+        
+        {/* <div className={`search-button`}>
+          <Icon.Search /> *
         </div>
-
         {searchValue.length > 0 && (
           <div
             className={`close-button`}
@@ -255,7 +256,7 @@ function Search({districtZones}) {
           >
             <Icon.X />
           </div>
-        )}
+        )} */}
       </div>
 
       {results.length > 0 && (

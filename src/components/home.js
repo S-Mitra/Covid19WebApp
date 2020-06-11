@@ -168,18 +168,29 @@ function Home(props) {
             {fetched && <Search districtZones={districtZones} />}
 
             <div className="actions">
-              <h5>
-                {isNaN(Date.parse(formatDate(lastUpdated)))
-                  ? ''
-                  : `${formatDateAbsolute(lastUpdated)} IST`}
-              </h5>
               {fetched && !showUpdates && (
-                <div className="bell-icon">
-                  {fetched && Bell}
-                  {newUpdate && <div className="indicator"></div>}
+                <div>
+                  <h5>
+                    {isNaN(Date.parse(formatDate(lastUpdated)))
+                      ? ''
+                      : `${formatDateAbsolute(lastUpdated)} IST`}
+                  </h5>
+                  <span className="bell-icon">
+                    {fetched && Bell}
+                    {newUpdate && <div className="indicator"></div>}
+                  </span>
                 </div>
               )}
-              {fetched && showUpdates && BellOff}
+              {fetched && showUpdates && BellOff && (
+                <div>
+                  <h2>
+                    {isNaN(Date.parse(formatDate(lastUpdated)))
+                      ? ''
+                      : `${formatDateAbsolute(lastUpdated)} IST`}
+                  </h2>
+                  <div className="bell-off-icon">{fetched && BellOff}</div>
+                </div>
+              )}
             </div>
           </div>
 
