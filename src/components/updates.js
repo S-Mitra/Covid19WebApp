@@ -28,9 +28,9 @@ function Updates(props) {
 
   return (
     <div className="updates">
-      <div className="updates-header">
+      {/* <div className="updates-header">
         <h2>{format(currentDate, 'd MMM')}</h2>
-      </div>
+      </div> */}
 
       {updates
         .slice(-5)

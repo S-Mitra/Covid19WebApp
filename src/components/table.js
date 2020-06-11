@@ -160,7 +160,7 @@ function Table({
         />
 
         {FineprintTop}
-
+        
         <table className="table fadeInUp" style={{animationDelay: '1.8s'}}>
           <thead>
             <tr>

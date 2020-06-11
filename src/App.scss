@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:700');
 // Color Pallete
 
 $blue: #007bff;
@@ -250,13 +251,14 @@ h6 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-left: 10rem;
+  margin-left: 12rem;
   margin-right: 5rem;
 
   .home-left,
   .home-right {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     width: 30rem;
   }
 
@@ -990,6 +992,120 @@ h6 {
   .search-input-wrapper {
     position: relative;
     width: 100%;
+      // position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // width: 300px;
+    height: 100px;
+    .search-button {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 80px;
+      background: #a6a4b7;
+      border-radius: 50%;
+      transition: all 1s;
+      z-index: 4;
+      box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+      &:hover {
+        cursor: pointer;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        margin: auto;
+        top: 22px;
+        right: 0;
+        bottom: 0;
+        left: 22px;
+        width: 12px;
+        height: 2px;
+        background: white;
+        transform: rotate(45deg);
+        transition: all .5s;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        margin: auto;
+        top: -5px;
+        right: 0;
+        bottom: 0;
+        left: -5px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border: 2px solid white;
+        transition: all .5s;
+      }
+    }
+    input {
+        font-family: 'Inconsolata', monospace;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        outline: none;
+        border: none;
+        // border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        background: #a6a4b7;
+        color: white;
+        text-shadow: 0 0 10px #a6a4b7;
+        padding: 0 80px 0 20px;
+        border-radius: 30px;
+        box-shadow: 0 0 25px 0 #a6a4b7,
+                    0 20px 25px 0 rgba(0, 0, 0, 0.2);
+        // box-shadow: inset 0 0 25px 0 rgba(0, 0, 0, 0.5);
+        transition: all 1s;
+        opacity: 0;
+        z-index: 5;
+        font-weight: bolder;
+        letter-spacing: 0.1em;
+        &:hover {
+          cursor: pointer;
+        }
+        &:focus {
+          width: 300px;
+          opacity: 1;
+          cursor: text;
+        }
+        :focus ~ .search-button {
+          right: -250px;
+          background: #151515;
+          z-index: 6;
+          &::before {
+            top: 0;
+            left: 0;
+            width: 25px;
+          }
+          &::after {
+            top: 0;
+            left: 0;
+            width: 25px;
+          height: 2px;
+          border: none;
+          background: white;
+          border-radius: 0%;
+          transform: rotate(-45deg);
+        }
+      }
+      &::placeholder {
+        color: white;
+        opacity: 0.5;
+        font-weight: bolder;
+      }
+    }
   }
 
   .search-placeholder {
@@ -1317,6 +1433,14 @@ h6 {
       margin: 0;
     }
 
+    h2 {
+      color: #4c75f2;
+      font-weight: 900;
+      position: relative;
+      left: -142px;
+      top: 18px;
+    }
+
     svg {
       color: $gray-mid;
       cursor: pointer;
@@ -1331,16 +1455,24 @@ h6 {
     .bell-icon {
       height: 24px;
       position: relative;
-
+      top: -20px;
+      left: 125px;
 
       .indicator {
         background: $pblue;
         border-radius: 50%;
         height: 7px;
         position: absolute;
-        right: -3px;
-        top: -3px;
+        right: -5px;
+        top: -11px;
         width: 7px;
+      }
+    }
+    .bell-off-icon{
+      svg {
+        left: 246px;
+        position: relative;
+        top: -24px;
       }
     }
   }
@@ -1662,6 +1794,7 @@ table {
     flex-direction: row;
     justify-content: space-between;
     position: relative;
+    text-transform: uppercase;
 
     abbr {
       color: $gray;
@@ -1745,6 +1878,22 @@ table {
         max-width: 7.5rem !important;
         text-align: left;
         word-wrap: break-word !important;
+      }
+
+      &.confirmed {
+        background-color: #ff030369;
+      }
+
+      &.active {
+        background-color: #007bff66;
+      }
+
+      &.recovered {
+        background-color: #28a74559;
+      }
+
+      &.deaths {
+        background-color: #6c757d61;
       }
 
       .delta {
@@ -1836,6 +1985,7 @@ table {
       }
 
       .title-icon {
+        color: darkslategray;
         svg {
           color: $gray-mid;
           padding-left: 2px;
@@ -1862,7 +2012,7 @@ table {
 
       .disclaimer {
         backdrop-filter: saturate(180%) blur(20px);
-        background: $gray-light;
+        background: #e2e0e0;
         border-radius: 5px;
         color: $gray;
         display: flex;
@@ -4457,7 +4607,7 @@ footer {
 
 .cards-container {
   margin-left: 5rem;
-  padding: 2rem;
+  padding: 4rem;
 
 
   .cards {
@@ -4467,7 +4617,7 @@ footer {
 
 
     .card {
-      flex: 0 1 calc(33% - 1em);
+      flex: 0 1 calc(36% - 1em);
       height: 30rem;
       margin-bottom: 2em;
 
