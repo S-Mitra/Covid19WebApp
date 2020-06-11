@@ -992,13 +992,11 @@ h6 {
   .search-input-wrapper {
     position: relative;
     width: 100%;
-      // position: absolute;
     margin: auto;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    // width: 300px;
     height: 100px;
     .search-button {
       position: absolute;
@@ -1009,7 +1007,7 @@ h6 {
       left: 0;
       width: 80px;
       height: 80px;
-      background: #a6a4b7;
+      background: #c5b7d6;
       border-radius: 50%;
       transition: all 1s;
       z-index: 4;
@@ -1047,52 +1045,52 @@ h6 {
       }
     }
     input {
-        font-family: 'Inconsolata', monospace;
-        position: absolute;
-        margin: auto;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 50px;
-        height: 50px;
-        outline: none;
-        border: none;
-        // border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        background: #a6a4b7;
-        color: white;
-        text-shadow: 0 0 10px #a6a4b7;
-        padding: 0 80px 0 20px;
-        border-radius: 30px;
-        box-shadow: 0 0 25px 0 #a6a4b7,
-                    0 20px 25px 0 rgba(0, 0, 0, 0.2);
-        // box-shadow: inset 0 0 25px 0 rgba(0, 0, 0, 0.5);
-        transition: all 1s;
-        opacity: 0;
-        z-index: 5;
-        font-weight: bolder;
-        letter-spacing: 0.1em;
-        &:hover {
-          cursor: pointer;
+      font-family: 'Inconsolata', monospace;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      outline: none;
+      border: none;
+      // border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      background: #c5b7d6;
+      color: white;
+      text-shadow: 0 0 10px #c5b7d6;
+      padding: 0 80px 0 20px;
+      border-radius: 30px;
+      box-shadow: 0 0 25px 0 #c5b7d6,
+                  0 20px 25px 0 rgba(0, 0, 0, 0.2);
+      // box-shadow: inset 0 0 25px 0 rgba(0, 0, 0, 0.5);
+      transition: all 1s;
+      opacity: 0;
+      z-index: 5;
+      font-weight: bolder;
+      letter-spacing: 0.1em;
+      &:hover {
+        cursor: pointer;
+      }
+      &:focus {
+        width: 350px;
+        opacity: 1;
+        cursor: text;
+      }
+      &:focus ~ .search-button {
+        right: -400px;
+        background: #151515;
+        z-index: 6;
+        &::before {
+          top: 0;
+          left: 0;
+          width: 25px;
         }
-        &:focus {
-          width: 300px;
-          opacity: 1;
-          cursor: text;
-        }
-        :focus ~ .search-button {
-          right: -250px;
-          background: #151515;
-          z-index: 6;
-          &::before {
-            top: 0;
-            left: 0;
-            width: 25px;
-          }
-          &::after {
-            top: 0;
-            left: 0;
-            width: 25px;
+        &::after {
+          top: 0;
+          left: 0;
+          width: 25px;
           height: 2px;
           border: none;
           background: white;
@@ -1433,12 +1431,12 @@ h6 {
       margin: 0;
     }
 
-    h2 {
+    h2 {  
       color: #4c75f2;
       font-weight: 900;
+      left: -147px;
+      /* top: 145px; */
       position: relative;
-      left: -142px;
-      top: 18px;
     }
 
     svg {
@@ -1470,9 +1468,9 @@ h6 {
     }
     .bell-off-icon{
       svg {
-        left: 246px;
+        left: 232px;
         position: relative;
-        top: -24px;
+        top: -40px;
       }
     }
   }
@@ -5464,3 +5462,4 @@ footer {
     transform: translateY(20px);
   }
 }
+
