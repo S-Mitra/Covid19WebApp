@@ -4603,62 +4603,6 @@ footer {
   }
 }
 
-.cards-container {
-  margin-left: 5rem;
-  padding: 4rem;
-
-
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-
-    .card {
-      flex: 0 1 calc(36% - 1em);
-      height: 30rem;
-      margin-bottom: 2em;
-
-
-      .charts-header {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        justify-content: flex-start;
-
-
-        .chart-title {
-          color: #6c757d;
-          font-family: 'archia';
-          font-size: 1.5rem !important;
-          font-weight: 900;
-          padding: 20px 0;
-          text-transform: uppercase;
-        }
-
-        .chart-content {
-          height: 100%;
-          width: 100%;
-        }
-
-        .chart-note {
-          color: $gray;
-          font-family: 'archia';
-          font-size: .8rem;
-          height: 50px;
-          margin-top: 5px;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 769px) {
-    margin-left: unset;
-    padding: 1rem;
-  }
-}
-
 @media (min-width: 769px) {
   .Home,
   .State {
@@ -5463,3 +5407,134 @@ footer {
   }
 }
 
+
+// * {box-sizing: border-box}
+
+.cards-container {
+  margin-left: 5rem;
+  padding: 4rem;
+  box-sizing: border-box;
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .mySlides {
+      display: none;
+      vertical-align: middle;
+      flex: 0 1 calc(36% - 1em);
+      height: 30rem;
+      margin-bottom: 2em;
+      position: relative;
+      left: 300px;
+
+      .charts-header {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: flex-start;
+
+        .chart-title {
+          color: #6c757d;
+          font-family: 'archia';
+          font-size: 1.5rem !important;
+          font-weight: 900;
+          padding: 20px 0;
+          text-transform: uppercase;
+        }
+
+        .chart-content {
+          height: 100%;
+          width: 100%;
+        }
+
+        .chart-note {
+          color: $gray;
+          font-family: 'archia';
+          font-size: .8rem;
+          height: 50px;
+          margin-top: 5px;
+        }   
+    }
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: #989494;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+
+    &:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover {
+    background-color: rgba(0,0,0,0.8);
+    }
+  }
+
+  @media (max-width: 769px) {
+    margin-left: unset;
+    padding: 1rem;
+  }
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    &.active,&:hover {
+      background-color: #717171;
+    }
+  }
+
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+  }
+}
